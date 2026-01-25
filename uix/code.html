@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">arrow_back_ios</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Refinador de Prompts</h2>
+</div>
+<span class="material-symbols-outlined text-slate-400">more_horiz</span>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-32">
+<!-- Upload Section -->
+<div class="px-4 py-4">
+<button class="w-full flex flex-col items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-8 bg-slate-50 dark:bg-[#192b33] hover:bg-slate-100 dark:hover:bg-[#233c48] transition-colors gap-3">
+<div class="bg-primary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
+</div>
+<span class="font-bold text-sm">Subir Imagen de Referencia</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">JPG, PNG hasta 10MB</span>
+</button>
+</div>
+<!-- Section 1: Definición -->
+<section class="mt-2">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider px-4 mb-2">Definición</h3>
+<div class="px-4">
+<textarea class="w-full rounded-xl text-slate-900 dark:text-white border border-slate-200 dark:border-[#325567] bg-white dark:bg-[#192b33] focus:ring-2 focus:ring-primary focus:border-transparent min-h-[120px] p-4 text-base font-normal placeholder:text-slate-400 dark:placeholder:text-[#92b7c9]" placeholder="Describe el objeto o sujeto principal en detalle..."></textarea>
+</div>
+</section>
+<!-- Section 2: Apariencia -->
+<section class="mt-6">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider px-4 mb-3">Apariencia</h3>
+<div class="flex flex-wrap gap-2 px-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary bg-primary/10 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    Fotorealista
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#192b33] text-slate-600 dark:text-slate-300 font-medium text-sm">
+                    Humedad
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#192b33] text-slate-600 dark:text-slate-300 font-medium text-sm">
+                    Estudio
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#192b33] text-slate-600 dark:text-slate-300 font-medium text-sm">
+                    Macro
+                </button>
+</div>
+</section>
+<!-- Section 3: Plano (Aspect Ratio) -->
+<section class="mt-8">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider px-4 mb-3">Plano</h3>
+<div class="grid grid-cols-3 gap-3 px-4">
+<div class="flex flex-col items-center p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+<div class="w-8 h-8 border-2 border-primary rounded-sm mb-2 opacity-80"></div>
+<span class="text-xs font-bold">1:1</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-[#192b33] cursor-pointer opacity-60">
+<div class="w-10 h-6 border-2 border-slate-400 rounded-sm mb-2"></div>
+<span class="text-xs font-bold">16:9</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-[#192b33] cursor-pointer opacity-60">
+<div class="w-6 h-10 border-2 border-slate-400 rounded-sm mb-2"></div>
+<span class="text-xs font-bold">9:16</span>
+</div>
+</div>
+</section>
+<!-- Section 4: Biometría -->
+<section class="mt-8 px-4">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider mb-3">Biometría</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 px-1">Postura</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-white dark:bg-[#192b33] border border-slate-200 dark:border-slate-700 p-3 text-sm focus:ring-primary">
+<option>Frontal</option>
+<option>Perfil</option>
+<option>Espalda</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-slate-400">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 px-1">Mirada</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-white dark:bg-[#192b33] border border-slate-200 dark:border-slate-700 p-3 text-sm focus:ring-primary">
+<option>A cámara</option>
+<option>Al horizonte</option>
+<option>Cerrada</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Composición -->
+<section class="mt-8 mb-8 px-4">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider mb-4">Composición</h3>
+<div class="space-y-4">
+<!-- Lighting -->
+<div class="flex flex-col gap-2">
+<span class="text-xs font-medium text-slate-400">Iluminación</span>
+<div class="flex p-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<button class="flex-1 py-2 text-sm font-bold rounded-md bg-white dark:bg-[#233c48] shadow-sm">Natural</button>
+<button class="flex-1 py-2 text-sm font-bold text-slate-500">Chiaroscuro</button>
+</div>
+</div>
+<!-- Lenses -->
+<div class="flex flex-col gap-2">
+<span class="text-xs font-medium text-slate-400">Lentes</span>
+<div class="flex p-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<button class="flex-1 py-2 text-sm font-bold text-slate-500">35mm</button>
+<button class="flex-1 py-2 text-sm font-bold rounded-md bg-white dark:bg-[#233c48] shadow-sm">85mm</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Primary Button -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-md mx-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold h-14 rounded-xl flex items-center justify-center gap-3 transition-transform active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">auto_fix_high</span>
+                Refinar Prompt
+            </button>
+</div>
+</div>
+</body></html>
