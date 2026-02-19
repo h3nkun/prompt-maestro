@@ -1,0 +1,15 @@
+{
+    "project_name": "Prompt Maestro",
+    "project_status": "development",
+    "architecture_decisions": {
+        "environment": {
+            "browser_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "browser_type": "Google Chrome"
+        }
+    },
+    "current_state": {
+        "verified_paths": [
+            "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        ]
+    }
+}
